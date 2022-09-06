@@ -6,17 +6,17 @@ enable ae2nwrite
 
 in /etc/apache2/sites-available/000-default.conf add this settings for a full redirect
 
-`
+```
 <Directory /path-to-dir>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride All
     Require All granted
 </Directory>
-`
+```
 
 in directory structure
 
-`
+```
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
@@ -27,11 +27,11 @@ in directory structure
 	
 	RewriteRule ^ index.html [L]
 </IfModule>
-`
+```
 
 # Setting for Nginx Server Based
 
-`
+```
 server {
     listen port;
     listen [::]:82;
@@ -45,4 +45,4 @@ server {
         try_files $uri /index.html
     }
 }
-`
+```
